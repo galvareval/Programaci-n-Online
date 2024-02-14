@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=CartaBaraja
+comment0.text=\r\n\ Este\ proyecto\ modela\ el\ comportamiento\ de\ una\ carta\ de\ la\ baraja\ espa\u00F1ola,\ cada\ carta\ tiene\ un\ palo\ y\ un\ valor.\r\n\ \r\n\ @author\ (Gianfranco\ \u00C1lvarez)\ \r\n\ @version\ (01_19_10_2021)\r\n
+comment1.params=queValor\ quePalo
+comment1.target=void\ CartaBaraja(int,\ int)
+comment1.text=\r\n\ Constructor\ de\ objetos\ para\ la\ clase\ CartaBaraja.\r\n\ Se\ obtiene\ mediante\ par\u00E1metros\ el\ valor\ y\ el\ palo\ de\ la\ carta.\r\n\ \r\n\ @param\ queValor\ Par\u00E1metro\ para\ obtener\ el\ valor\ de\ la\ carta(n\u00FAmero\ entero\ 1-12).\r\n\ @param\ quePalo\ Par\u00E1metro\ para\ obtener\ el\ palo\ de\ la\ carta(1\=OROS,\ 2\=COPAS,\ 3\=ESPADAS,\ 4\=BASTOS).\r\n
+comment2.params=
+comment2.target=java.lang.String\ getPalo()
+comment2.text=\r\n\ M\u00E9todo\ para\ mostrar\ el\ valor\ del\ palo\ usando\ swicth.\r\n\ \r\n\ @return\ \ Muestra\ el\ valor\ del\ palo.\r\n
+comment3.params=
+comment3.target=java.lang.String\ getValor()
+comment3.text=\r\n\ M\u00E9todo\ para\ mostrar\ el\ valor\ de\ la\ carta\ usando\ sentencia\ if.\r\n\ \r\n\ @return\ \ Muestra\ el\ valor\ de\ la\ carta.\r\n
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment4.text=\r\n\ M\u00E9todo\ que\ devuelve\ una\ cadena\ representado\ la\ carta.\r\n\ \r\n\ @return\ \ Muestra\ una\ representaci\u00F3n\ de\ la\ carta.\r\n
+numComments=5

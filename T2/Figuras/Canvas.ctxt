@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=Canvas\ getCanvas()
+comment0.text=\nFactory\ method\ to\ get\ the\ canvas\ singleton\ object.\n\n
+comment1.params=titulo\ ancho\ alto\ bgColor
+comment1.target=Canvas(String,\ int,\ int,\ Color)
+comment1.text=\nCrea\ el\ Canvas\n@param\ titulo\ t\u00EDtulo\ que\ aparece\ en\ el\ marco\ del\ canvas\n@param\ ancho\ el\ ancho\ deseado\ para\ el\ canvas\n@param\ alto\ el\ alto\ deseado\ para\ el\ canvas\n@param\ bgColor\ el\ color\ de\ fondo\ deseado\ para\ el\ canvas\n\n
+comment2.params=visible
+comment2.target=void\ setVisible(boolean)
+comment2.text=\nEstablece\ la\ visibilidad\ del\ canvas\ y\ trae\ el\ canvas\ al\ frente\ de\ la\ pantalla\ \ncuando\ se\ hace\ visible.\ Este\ m\u00E9todo\ puede\ ser\ utilizado\ tambi\u00E9n\ para\ traer\ delante\ \nde\ otras\ ventanas\ a\ un\ canvas\ ya\ visible.\n@param\ visible\ \ valor\ booleano\ que\ representa\ la\ visibilidad\ deseada\ del\ canvas\ true\no\ false\n\n
+comment3.params=referenciaObjeto\ color\ figura
+comment3.target=void\ dibujar(Object,\ String,\ Shape)
+comment3.text=\nDibuja\ una\ determinada\ figura\ en\ el\ canvas\n@param\ \ referenciaObjeto\ un\ objeto\ para\ definir\ la\ identidad\ de\ la\ figura\n@param\ \ color\ \ \ \ \ \ \ \ \ \ \ \ el\ color\ de\ la\ figura\n@param\ \ figura\ \ \ \ \ \ \ \ \ el\ objeto\ figura\ a\ ser\ dibujado\ en\ el\ canvas\n\n
+comment4.params=referenciaObjeto
+comment4.target=void\ borrar(Object)
+comment4.text=\nBorra\ una\ determinada\ figura\ de\ la\ pantalla\n@param\ \ referenciaObjeto\ \ el\ objeto\ figura\ a\ ser\ borrado\n\n
+comment5.params=colorString
+comment5.target=void\ setFondoColor(String)
+comment5.text=\nEstablecer\ el\ color\ de\ fondo\ del\ Canvas\n@param\ \ nuevoColor\ el\ nuevo\ color\ para\ el\ fondo\ del\ canvas\n\n
+comment6.params=milisegundos
+comment6.target=void\ esperar(int)
+comment6.text=\nEsperar\ un\ n\u00FAemro\ determinado\ de\ milisegundos\ antes\ de\ acabar.\nEsto\ proporciona\ una\ manera\ de\ especificar\ un\ peque\u00F1o\ retraso\ \nque\ puede\ ser\ utilizado\ para\ producir\ animaciones\n@param\ \ milisegundos\ \ tiempo\ de\ espera\n\n
+comment7.target=void\ redibujar()
+comment7.text=\nRedibujar\ todas\ las\ figuras\ que\ est\u00E1n\ actualmente\ en\ el\ canvas\n\n
+comment8.target=void\ borrar()
+comment8.text=\nBorrar\ todo\ el\ canvas\n\n
+numComments=9

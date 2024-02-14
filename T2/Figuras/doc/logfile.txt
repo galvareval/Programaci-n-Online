@@ -1,0 +1,19 @@
+Class documentation
+<---- javadoc command: ---->
+c:\j2sdk1.4.0_02\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-source
+1.4
+-noindex
+-notree
+-nohelp
+-nonavbar
+-d
+C:\Object First Java\projects\chapter01\shapes\doc
+-classpath
+C:\BlueJ\lib\junit.jar
+C:\Object First Java\projects\chapter01\shapes\Circle.java
+<---- end of javadoc command ---->
