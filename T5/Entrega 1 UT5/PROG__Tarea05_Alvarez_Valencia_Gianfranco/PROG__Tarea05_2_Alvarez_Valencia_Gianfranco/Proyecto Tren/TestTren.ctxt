@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=TestTren
+comment0.text=\r\n\ Esta\ clase\ para\ probar\ el\ proyecto\ tren\r\n\ \r\n\ @author\ (Gianfranco\ \u00C1lvarez\ Valencia)\ \r\n\ @version\ (01_18_01_2021)\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ \ M\u00E9todo\ main,\ contiene\ las\ sentencias\ necesarias\ para\ testear\ la\ aplicaci\u00F3n.\r\n
+numComments=2

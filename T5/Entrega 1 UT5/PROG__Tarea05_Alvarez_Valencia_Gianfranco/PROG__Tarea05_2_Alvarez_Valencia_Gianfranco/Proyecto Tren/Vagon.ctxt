@@ -1,0 +1,31 @@
+#BlueJ class context
+comment0.target=Vagon
+comment0.text=\r\n\ Esta\ clase\ maneja\ los\ asientos\ de\ los\ vagones\ de\ un\ tren,cada\ objeto\ sera\ identificado\ como\ un\ vag\u00F3n\ \u00FAnico.\r\n\ Los\ vagones\ tienen\ asientos,\ siendo\ el\ primero\ de\ ellos\ el\ de\ la\ posici\u00F3n\ 0.\r\n\ \r\n\ @author\ (Gianfranco\ \u00C1lvarez\ Valencia)\ \r\n\ @version\ (01_18_01_2021)\r\n
+comment1.params=numeroAsientos
+comment1.target=Vagon(int)
+comment1.text=\r\n\ Constructor\ de\ objetos\ para\ la\ clase\ Vagon.\r\n\ \r\n\ @param\ numeroAsientos\ Par\u00E1metro\ para\ pasar\ el\ n\u00FAmero\ de\ asintos\ del\ vag\u00F3n.\r\n
+comment2.params=
+comment2.target=void\ inicializarAsientos()
+comment2.text=\r\n\ M\u00E9todo\ privado\ para\ inicializar\ los\ elementos\ del\ Array\ a\ -1.\r\n\ \ \r\n
+comment3.params=
+comment3.target=int\ getCapacidad()
+comment3.text=\r\n\ M\u00E9todo\ que\ devuelve\ el\ n\u00FAmero\ total\ de\ asientos\ en\ el\ vag\u00F3n.\r\n\ \r\n\ @return\ Devuelve\ la\ dimensi\u00F3n\ del\ Array\ que\ ser\u00E1\ la\ cantidad\ de\ asientos.\r\n
+comment4.params=
+comment4.target=void\ printDetallesVagon()
+comment4.text=\r\n\ M\u00E9todo\ que\ escribe\ por\ pantalla\ la\ informaci\u00F3n\ relativa\ al\ vag\u00F3n.\r\n
+comment5.params=
+comment5.target=java.lang.String\ textToString()
+comment5.text=\r\n\ M\u00E9todo\ que\ devuelve\ la\ informaci\u00F3n\ del\ vag\u00F3n\ en\ string.\r\n\ \r\n\ @return\ Devuelve\ un\ string\ con\ la\ informaci\u00F3n\ del\ vag\u00F3n.\r\n
+comment6.params=numAsiento
+comment6.target=void\ printTicket(int)
+comment6.text=\r\n\ M\u00E9todo\ que\ muestra\ la\ informaci\u00F3n\ del\ vag\u00F3n\ y\ el\ precio\ del\ asiento\ pasado\ por\ par\u00E1metro.\r\n\ \r\n\ @param\ numAsiento\ Par\u00E1metro\ para\ pasar\ la\ posici\u00F3n\ del\ asiento\ en\ el\ Array.\r\n
+comment7.params=numAsiento
+comment7.target=double\ reembolsarAsiento(int)
+comment7.text=\r\n\ M\u00E9todo\ que\ sirve\ para\ reembolsar\ un\ asiento\ vendido,\ retea\ el\ valor\ de\ la\ posici\u00F3n\ del\ array\ pasada\ como\ par\u00E1metro.\r\n\ Y\ devuelve\ el\ valor\ reseteado\ en\ caso\ de\ que\ el\ asiento\ haya\ sido\ vendido,\ sino\ devuelve\ 0.\r\n\ \r\n\ @param\ numAsiento\ Par\u00E1metro\ para\ pasar\ la\ posic\u00F3n\ del\ asiento\ en\ el\ Array.\r\n\ @return\ Devuelve\ el\ precio\ del\ asiento,\ si\ no\ ha\ sido\ vendido\ devuelve\ 0.\r\n
+comment8.params=
+comment8.target=boolean\ reservarSiguienteAsiento()
+comment8.text=\r\n\ M\u00E9todo\ que\ reserva\ el\ asiento\ que\ apunta\ al\ siguiente\ asiento\ que\ todav\u00EDa\ no\ se\ ha\ vendido(asientoSiguiente).\r\n\ el\ precio\ que\ se\ asigna\ a\ esa\ posici\u00F3n\ del\ Array\ es\ \=(2.5\ veces\ esa\ posici\u00F3n\ +\ 1).\ \r\n\ \r\n\ @return\ Devuelve\ un\ valor\ booleano\ del\ estado\ de\ la\ reserva,\ si\ ha\ sido\ heccha\ o\ no.\r\n
+comment9.params=
+comment9.target=double\ getPrecioMedio()
+comment9.text=\r\n\ M\u00E9todo\ que\ devuelve\ el\ precio\ medio\ de\ todos\ los\ asinetos\ que\ han\ sido\ vendidos\ y\ no\ reembolsados.\r\n\ \r\n\ @return\ Devuelve\ la\ media\ de\ precios\ de\ los\ asientos\ vendidos.\r\n
+numComments=10

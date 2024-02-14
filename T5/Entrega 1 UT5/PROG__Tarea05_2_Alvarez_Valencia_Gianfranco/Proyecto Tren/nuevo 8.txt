@@ -1,0 +1,63 @@
+android:id="@+id/et_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:gravity="center"
+                    android:hint="Last Name"
+                    android:padding="10dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#808080"
+                    android:textSize="15sp" />
+					
+					
+					
+					<EditText
+                    android:id="@+id/et_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:gravity="center"
+                    android:hint="Last Name"
+                    android:padding="10dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#808080"
+                    android:textSize="15sp" />
+					
+					
+					android:id="@+id/et_first_name"
+					
+					android:hint="First Name"
+					
+					
+				android:id="@+id/layout_last_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="14dp"
+                android:textColorHint="#808080"
+                app:layout_constraintBottom_toTopOf="@+id/layout_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="
+				
+				
+				
+				
+				
+				return requestHandler.sendPostRequest(URLs.URL_LOGIN, params);
+				
+				/*
+$stmt = $mysqli->prepare("UPDATE usuario SET nombre = ?, 
+   apellidos = ?, 
+   telefono = ?,  
+   descripcion = ?  
+   WHERE correo = ?");
+$stmt->bind_param('sssdii',
+   $_POST['nombre'],
+   $_POST['apellidos'],
+ //  $_POST['correo'],
+   $_POST['telefono'], 
+   $_POST['descripcion'],
+   $_POST['correo']);
+$stmt->execute(); 
+$stmt->close();*/
