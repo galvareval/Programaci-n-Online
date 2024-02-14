@@ -1,0 +1,12 @@
+//comparar el mayor entre el primero y segundo con el tercero
+                    if (jugador1.getGoles() > jugador2.getGoles())
+                        espichichi = jugador1;
+                    else if (jugador1.getGoles() < jugador2.getGoles())
+                        espichichi = jugador2;
+                    else 
+                        espichichi = null;
+                    if (jugador3.getGoles() > espichichi.getGoles())
+                        espichichi = jugador3;
+                    else if (jugador3.getGoles() == espichichi.getGoles())
+                        espichichi = null;
+                    break;
