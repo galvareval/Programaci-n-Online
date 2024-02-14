@@ -1,0 +1,32 @@
+101, 'Coffee-Imp', 'Pol. Ind', 'Getafe', 'Mad', 28280
+49, 'La Superior', 'Lepanto 23', 'Rianza', 'Seg', 40546
+150, 'Kaffe', 'Nueva 34', 'Baeza', 'Jaén, 23375
+
+
+
+
+"INSERT INTO SUMINISTRADORES VALUES (101, 'Cafés Onak' , 'callo Urkiola s/n', 'Durango', 'Bizkaia', 48240);";
+***
+
+"INSERT INTO SUMINISTRADORES VALUES (101, 'Coffee-Imp', 'Pol. Ind', 'Getafe', 'Mad', 28280);";
+
+"INSERT INTO SUMINISTRADORES VALUES (49, 'La Superior', 'Lepanto 23', 'Rianza', 'Seg', 40546);";
+
+"INSERT INTO SUMINISTRADORES VALUES (150, 'Kaffe', 'Nueva 34', 'Baeza', 'Jaén, 23375);";
+
+
+('Colombia', 101, 7.99, 0, 0),"
+('Brasil', 49, 8.99, 0, 0),"
+('Espresso', 150, 9.99, 0, 0),"
+('Colombia Descaf', 101, 8.99, 0, 0),"
+('Brasil Descaf', 49, 9.99, 0, 0),"
+
+ResultSet rs = stmt.executeQuery("SELECT ACUMULADO FROM CAFES WHERE NOMBRE_CAFE = '" + nomCafe + "';");
+
+Statement stmt = con.createStatement();
+            String consulta = "SELECT ACUMULADO FROM CAFES WHERE NOMBRE_CAFE = ?;";
+            ResultSet rs = stmt.executeQuery(consulta);
+            System.out.println("Prueba: " +  rs.getInt(1));
+			
+
+CREATE TABLE LIBRO (ISBN VARCHAR(32) PRIMARY KEY, NOMBRE_SUMI VARCHAR(32), AUTOR VARCHAR(60), EDITORIAL VARCHAR(32), FECHA_PUBLICACION date);

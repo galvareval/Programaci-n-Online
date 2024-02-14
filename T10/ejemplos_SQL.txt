@@ -1,0 +1,85 @@
+import java.sql.*;
+import java.util.Properties;
+
+public class StatementExample {
+
+    public static void main(java.lang.String[] args) 
+    {
+
+        // Sugerencia: cargarlos desde un objeto de propiedades.
+        String DRIVER = "com.ibm.db2.jdbc.app.DB2Driver";
+        String URL    = "jdbc:db2://*local";
+
+        // Registrar el controlador JDBC nativo. Si el controlador no puede
+        // registrarse, la prueba no puede continuar.
+        try {
+            Class.forName(DRIVER);
+        } catch (Exception e) {
+            System.out.println("No se ha podido registrar el controlador.");
+            System.out.println(e.getMessage());
+            System.exit(1);
+        }
+
+        Connection c = null;
+        Statement s = null;
+
+        try {
+            // Crear las propiedades de conexión.
+            Properties properties = new Properties ();
+            properties.put ("user", "userid");
+            properties.put ("password", "password");
+
+            // Conectar con la base de datos local.
+            c = DriverManager.getConnection(URL, properties);
+
+            // Crear un objeto Statement.
+            s = c.createStatement();
+            // Suprimir la tabla de prueba, si existe. Nota: en este 
+            // ejemplo se presupone que la colección MYLIBRARY
+            // existe en el sistema.
+            try {
+                s.executeUpdate("DROP TABLE MYLIBRARY.MYTABLE");
+            } catch (SQLException e) {
+                // Continuar simplemente... es probable que la tabla no exista.  
+            }
+
+            // Ejecutar una sentencia SQL que crea una tabla en la base de datos.
+            s.executeUpdate("CREATE TABLE MYLIBRARY.MYTABLE (NAME VARCHAR(20), ID INTEGER)");
+
+            // Ejecutar algunas sentencias SQL que insertan registros en la tabla.
+            s.executeUpdate("INSERT INTO MYLIBRARY.MYTABLE (NAME, ID) VALUES ('RICH', 123)");
+            s.executeUpdate("INSERT INTO MYLIBRARY.MYTABLE (NAME, ID) VALUES ('FRED', 456)");
+            s.executeUpdate("INSERT INTO MYLIBRARY.MYTABLE (NAME, ID) VALUES ('MARK', 789)");
+
+            // Ejecutar una consulta SQL en la tabla.
+            ResultSet rs = s.executeQuery("SELECT * FROM MYLIBRARY.MYTABLE");
+
+            // Visualizar todos los datos de la tabla.
+            while (rs.next()) {
+                System.out.println("El empleado " + rs.getString(1) + " tiene el ID " + rs.getInt(2));
+            }
+
+        } catch (SQLException sqle) {
+            System.out.println("El proceso de base de datos ha fallado.");
+            System.out.println("Razón: " + sqle.getMessage());
+        } finally {
+            // Cerrar los recursos de base de datos.
+            try {
+                if (s != null) {
+                    s.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("El borrado no ha podido cerrar Statement.");
+            }
+             }
+
+            try {
+                if (c != null) {
+                    c.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("El borrado no ha podido cerrar Connection.");
+            }
+        }
+    }
+}

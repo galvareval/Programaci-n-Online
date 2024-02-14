@@ -1,0 +1,202 @@
+Codigo tareas:
+
+public void conectar()
+    {
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(this.url,this.user,this.pass);
+            
+        } catch (SQLException  e) 
+        {
+            System.out.println("SQL Exception: "+ e.toString());
+        } 
+        catch (ClassNotFoundException cE) 
+        {
+            System.out.println("Excepción: "+ cE.toString());
+        }
+    }
+
+
+sql parametri: usar prepareStatement
+con.setAutoCommit(false);
+            //Consulta para obtener el acumulado actual
+            String consulta = "SELECT ACUMULADO FROM CAFES WHERE NOMBRE_CAFE = ? ";
+            PreparedStatement psAcum = con.prepareStatement(consulta);
+            psAcum.setString(1, nomCafe);
+            // Ejecutar consulta y almacenar en resulset
+            ResultSet results = psAcum.executeQuery();
+            while (results.next())
+            {
+                //System.out.println("Prueba: " +  results.getInt(1));
+                // ALmacenar el valor de acumulado para sumarlo con las ventas semanales
+                    acumulado = results.getInt(1); 
+            }
+
+// Actualizar las ventas semanales
+            PreparedStatement ps = con.prepareStatement("UPDATE CAFES SET VENTAS = ? WHERE NOMBRE_CAFE = ?;");
+            ps.setInt(1, cantidadCafe);
+            ps.setString(2, nomCafe);
+            ps.executeUpdate();
+            // Actulizar el acumulado; lo que ya habia acumulado más las ventas semanales
+            PreparedStatement psTot = con.prepareStatement("UPDATE CAFES SET ACUMULADO = ? WHERE NOMBRE_CAFE = ?;");
+            psTot.setInt(1, acumulado + cantidadCafe);
+            psTot.setString(2, nomCafe);
+            psTot.executeUpdate();
+			
+crear tabla:
+
+public void crearTabla()
+    {
+        //sql
+        try {
+            Statement stTabla = con.createStatement();
+            ResultSet resT = stTabla.executeQuery("SELECT * FROM libro;");
+            DefaultTableModel modelo = new DefaultTableModel();
+            JTable tabla = new JTable(modelo);
+            //Columnas
+            modelo.addColumn("ISBN");
+            modelo.addColumn("TITULO");
+            modelo.addColumn("AUTOR");
+            modelo.addColumn("EDITORIAL");
+            modelo.addColumn("FECHA PUBLICACIÓN");
+            // REsultado consulta
+            while(resT.next())
+            {
+                // Crear array de cada una de las fialas de la talba
+                Object[] fila = new Object[5];
+                for(int i=0;i<5;i++)
+                    fila[i] = resT.getObject(i+1);
+                modelo.addRow(fila);
+            }
+            scroll = new JScrollPane(tabla);
+            this.getContentPane().add(scroll,BorderLayout.SOUTH);
+        } catch (SQLException ex) {
+            Logger.getLogger(Ejercicio5.class.getName()).log(Level.SEVERE, null, ex);
+        };  
+		
+String.valueOf(contadorClicks)
+
+
+//menus
+Para nuestro visualizador de imágenes, vamos a crear una barra de menús y varios menús y
+elementos de menú.
+La clase JFrame tiene un método denominado setJMenuBar. Podemos crear una barra de
+menú y utilizar este método para asociar la barra de menús al marco:
+JMenuBar menubar - new JMenuBar();
+frame.setJMenuBar(menubar);
+Ahora estamos listos para crear un menú y añadirlo a la barra de menús:
+JMenu fileMenu - new JMenu("File");
+menubar.add(fileMenu);
+Estas dos líneas crean un menú etiquetado como File y lo insertan en la barra de menús. Por
+último, podemos añadir elementos de menú al menú. Las siguientes líneas añaden al menú File
+dos elementos, etiquetados como Open y Quit:
+JMenuItem openItem - new JMenuItem("Open");
+fileMenu.add (openItem);
+JMenuItem quitItem - new JMenuItem("Quit");
+fileMenu.add (quitItem);
+
+
+//img
+
+public class ImageViewer{
+private JFrame frame;
+private ImagePanel imagePanel;
+//Se omiten el constructor y el método para salir de la
+aplicación
+/**
+* Función Open: abre un selector de archivos para elegir
+* un nuevo archivo de imagen
+*/
+private void openFile() {
+OFImage image = ImageFileManager.getImage();
+imagePanel.setImage(image);
+frame.pack();
+}
+/**
+* Crear el macro Swing y su contenido
+*/
+private void makeFrame() {
+frame = new JFrame("ImageViewer");
+makeMenuBar(frame);
+Container contentPane = frame.getContentPane();
+imagePanel = new ImagePanel();
+contentPane.add(imagePanel);
+//terminada la construcción - colocar los componentes
+y mostrar
+frame.pack();
+frame.visible(true);
+}
+//Método makeMenuBar omitido
+}
+Mostrar retroalimentación
+¿Qué sucede cuando abrimos una imagen y luego redimensionamos
+el marco?
+La imagen ocupa de inicio todo el marco. Al redimensionar el
+marco, la imagen no lo hace. Se mantiene en su tamaño
+original. El marco de amplía con un marco blanco.
+¿Qué sucede si redimensionamos primero el marco y luego abrimos
+una imagen?
+El marco se redimensiona al tamaño de la imagen
+Al comparar est
+
+
+/// layout boder
+
+contentPane = frame.getContentPane();
+contentPane.setLayout(new BorderLayout());
+filenameLabel = new JLabel();
+contentPane.add(filenameLabel, BorderLayout.NORTH);
+imagePanel = new ImagePanel();
+contentPane.add(ImagePanel, BorderLayout.CENTER);
+statusLabel = new JLabel(“Versíon 1.0”);
+contentPane.add(statusLabel, BorderLayout.SOUTH);
+
+
+// about
+
+//Menu Help
+JMenu helpMenu = new JMenu("Help");
+menubar.add(helpMenu);
+JMenuItem aboutItem = new JMenuItem("AboutImageViewer");
+helpMenu.add(aboutItem);
+
+
+JOptionPane.showMessageDialog(frame,
+"ImageViewer\n",“About
+ImageViewer”, JOptionPane.INFORMATION_MESSAGE);
+
+
+//
+recorrer array 
+ public void addJugadores(Jugador[] jugadores)
+    {
+        // Recorrer array y si no existe el jugador en el equipo, añadir a la lista.
+        for (int i = 0;i < jugadores.length;i++)
+        {
+            if(!this.jugadores.contains(jugadores[i]))
+                this.jugadores.add(jugadores[i]);
+        }
+    }
+	
+//dclarar arrylist
+private ArrayList <Persona> jugadores;
+//inici encontructor
+	jugadores = new ArrayList <Persona> ();
+// iterar alist
+ private void escribir(ArrayList<Persona> jugadores)
+    {
+        // Declarar iterador
+        Iterator<Persona> it;
+        it = jugadores.iterator();
+         // Recorrer la lista mediante el iterador e imprimir por pantalla los jugadores de la lista.
+        while(it.hasNext())
+        {
+            Persona per = it.next();
+            System.out.println(per.toString());
+        }
+        
+    }
+	
+
+
+
